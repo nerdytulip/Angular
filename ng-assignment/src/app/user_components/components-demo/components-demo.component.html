@@ -1,0 +1,21 @@
+<div *ngIf="users.length>0; else noUsers">
+<table class="table">
+      <tr>
+        <th *ngFor="let column of headers">
+          {{column}}
+        </th>
+      </tr>
+
+        <tr *ngFor="let user of users">
+            <td *ngFor="let column of headers">
+              {{user[column]}}
+            </td>
+        </tr>
+</table>
+</div>
+
+<ng-template #noUsers>
+  <div>
+    <p>No users Available</p>
+  </div>
+</ng-template>

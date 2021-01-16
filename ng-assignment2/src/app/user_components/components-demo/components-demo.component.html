@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div *ngIf="users.length>0; else noUsers">
+    <table class="table is-bordered">
+          <tr>
+            <!-- <th *ngFor="let column of headers">
+              {{column}} </th>-->
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+          </tr>
+    
+            <tr *ngFor="let user of users">
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td ngrMyHighlight>{{user.email}}</td>
+            </tr>
+    </table>
+    </div>
+    
+    <ng-template #noUsers>
+      <div>
+        <p>No users Available</p>
+      </div>
+    </ng-template>
+
+</div>
+
